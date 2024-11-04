@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samy AKCHICHE</title>
+    <meta name="description" content="A showcase of my work as a front-end developer, featuring responsive web designs, interactive applications, and clean, modern UI/UX projects. Explore my coding journey and discover how I bring ideas to life through efficient, well-structured code and creative design solutions.">
+    <link rel="shortcut icon" href="/img/amy.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/7d9793dc98.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="nav">
         <div class="container">
-            <img class="logo" src="/img/amy.png" alt="Logo of Samy AKCHICHE" loading="lazy">
+            <img class="logo" src="/img/amy.png" alt="Logo of Samy AKCHICHE" loading="lazy" >
             <ul>
                 <li><a href="#contact">Contact Me</a></li>
                 <li><a href="#project">Projects</a></li>
-                <li><a href="#feature">Features</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#home">Home</a></li>
             </ul>
@@ -30,7 +31,7 @@
         <div class="container-about">
             <h1 class="item1">About Samy</h1>
             <div class="item2">
-                <img src="/img/profile-picture.jpg" alt="Profile Picture" width="200px" height="200px">
+                <img src="/img/about-me.jpg" alt="Profile Picture" width="200px" height="200px">
             </div>
             <div class="item3">
                 <p>Hello, my name is Samy AKCHICHE, and I'm a passionate frontend web developer. I started my journey in web development out of a love for coding and design. What began as a hobby quickly turned into a full-fledged passion.</p>
@@ -55,9 +56,66 @@
                 <i class="fa-brands fa-github skill-icon"></i>
                 <h2>Git & Github</h2>
                 <p>Experience in branching, merging, pull requests, and handling version control in both individual and team settings.</p>
-
             </div>
         </div>
     </div>
+    <div class="project" id="project">
+        <div class="container">
+            <h1>Projects</h1>
+            <a href="https://github.com/samyAkchiche/SamyQuiz-OnePiece" target="_blank">
+                <div class="project-card">
+                    <img src="/img/quiz-image.png" alt="quiz-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Quiz Application</h3>
+                        <p>Developed a dynamic and interactive quiz application designed to provide an engaging and seamless user experience. The project showcases strong front-end development skills and incorporates a variety of modern web technologies.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/samyAkchiche/todoList-react" target="_blank">
+                <div class="project-card">
+                    <img src="/img/todo-image.png" alt="todo-image">
+                    <div class="project-content">
+                        <h3 class="project-title">To-Do List Application</h3>
+                        <p>Developed a feature-rich To-Do List application using React.js, designed to simplify task management while providing an intuitive user experience. This project highlights skills in component-based architecture and state management</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+<!-- Contact Section -->
+<div class="contact" id="contact">
+    <div class="container-contact">
+        <h1>Contact Me</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <div class="form-group">
+                <input type="hidden" name="access_key" value="63a9d7b0-d5b8-4713-9def-4fcf7e440737">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61554755078413" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/nagi.akc/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+213540922729" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+2130540922729"><i class="fas fa-phone"></i></a>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container-footer">
+        <p>&copy; 2024 Samy AKCHICHE. All Rights Reserved.</p>
+    </div>
+</footer>
+
 </body>
 </html>
