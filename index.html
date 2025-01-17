@@ -22,7 +22,16 @@
         </div>
     </div>
     <div class="main" id="home">
+
         <div class="container">
+            <div class="menubtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="menubar">
+                <a href="#about" id="aboutMenuBtn">About me</a>
+                <a href="#project" id="projectsMenuBtn">Projects</a>
+                <a href="#contact" id="contactMenuBtn">Contact me</a>
+            </div>
             <h1>Hello, I am <span>Samy AKCHICHE</span></h1>
             <p>I am a self-taught Frontend Web Developer</p>
         </div>
@@ -118,4 +127,21 @@
     </div>
 </footer>
 </body>
+<script>
+    const menuBtn = document.querySelector(".menubtn");
+    const menuBar = document.querySelector(".menubar");
+
+    function toggleMenu () {
+        menuBtn.classList.toggle("active");
+        if (menuBtn.classList.contains("active")) {
+            menuBtn.innerHTML = "<i class='fa-solid fa-xmark'></i>";
+            menuBar.style.display = "flex";
+        } else {
+            menuBtn.innerHTML = "<i class='fa-solid fa-bars'></i>";
+            menuBar.style.display = "none";
+        }
+    }
+
+    menuBtn.addEventListener("click", toggleMenu);
+</script>
 </html>

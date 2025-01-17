@@ -92,6 +92,36 @@ li a:hover::before {
     height: 100%;
     width: 100%;
     text-align: center;
+    position: relative;
+}
+
+.menubtn {
+    color: var(--main-text-color);
+    cursor: pointer;
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    font-size: 2rem;
+    display: none;
+    z-index: 10;
+}
+
+.menubar {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: black;
+    z-index: 5;
+}
+
+.menubar a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    padding: 7rem;
 }
 
 .main span {
@@ -210,15 +240,11 @@ li a:hover::before {
     width: 60%;
     padding: 50px 20px 0;
     margin: 50px auto 0;
-    max-width: 1200px;
     display: flex;
     justify-content: center; /* Centers the <h1> horizontally */
     align-items: center; /* Centers the <h1> vertically (optional) */
     flex-direction: column; /* Stacks items vertically */
     text-align: center;
-}
-
-.project h1 {
 }
 
 .project .container {
@@ -352,4 +378,61 @@ button:hover {
 .footer p {
     margin: 0;
     font-size: 16px;
+}
+
+/* Responsiveness */
+
+@media only screen and (max-width: 768px) {
+    p {
+        font-size: 1rem;
+    }
+
+    .nav .container {
+        display: none;
+    }
+
+    .menubtn {
+        display: initial;
+    }
+
+    .container-about {
+        margin: 2rem;
+    }
+
+    .container-about .item1 {
+        font-size: 1.5rem;
+    }
+
+    .item2 img {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .skills {
+        margin-bottom: 28rem;
+    }
+
+    .project-card {
+        display: grid;
+        margin-bottom: 2rem;
+        gap: 0.2rem;
+        width: 25rem;
+    }
+    .project img {
+        margin-left: 0.2rem;
+        width: 24rem;
+    }
+
+    .project-content {
+        padding-bottom: 0.5rem;
+        margin: 0 1rem;
+    }
+
+    .contact {
+        margin-top: 5rem;
+    }
+
+    .form-group {
+        margin: 2rem;
+    }
 }
