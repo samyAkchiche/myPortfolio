@@ -384,6 +384,35 @@ button:hover {
 
 /* Responsiveness */
 
+@media (max-width: 320px) {
+    /* ABOUT */
+    body .about {
+        margin-bottom: 0;
+        height: auto;
+    }
+
+    /* SKILLS */
+
+    body .skills {
+        padding: 0 1.3rem;
+        /* Passed the rule by force */
+        margin: 2rem 0 3rem !important;
+    }
+
+    /* PROJECT */
+
+    body .project .container {
+        grid-template-rows: 4rem repeat(2, 1fr);
+    }
+
+    /* CONTACT */
+
+    body .contact {
+        margin-top: 3rem;
+        padding-top: 0;
+    }
+}
+
 @media (max-width: 575px) {
     html,
     body {
@@ -416,6 +445,8 @@ button:hover {
 
     .about {
         margin-bottom: 12rem;
+        display: flex;
+        justify-content: center;
     }
 
     .about p {
@@ -424,6 +455,7 @@ button:hover {
 
     .container-about {
         height: 30rem;
+        width: 26rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -455,9 +487,9 @@ button:hover {
     /* PROJECTS */
 
     .project .project-card {
-        width: 16rem;
+        width: 19rem;
         gap: 0;
-        margin-bottom: 0;
+        margin-bottom: 2rem;
     }
 
     .project .project-card p {
@@ -465,7 +497,7 @@ button:hover {
     }
 
     .project .project-card img {
-        width: 15rem;
+        width: 18rem;
     }
 
     /* CONTACT */
