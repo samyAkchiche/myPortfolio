@@ -567,3 +567,42 @@ button:hover {
         margin: 2rem;
     }
 }
+
+@media (max-width: 1440px) {
+    /* ABOUT */
+
+    .about {
+        height: 27vh;
+    }
+
+    /* SKILLS */
+
+    .skills {
+        padding: 0;
+    }
+
+    /* PROJECT */
+
+    .project {
+        padding-top: 0;
+        height: 28rem;
+        width: 70vw;
+    }
+
+    .project .container {
+        width: auto;
+        grid-template-rows: 4rem repeat(2, 1fr);
+    }
+
+    .project-card {
+        height: 10rem;
+    }
+
+    .project-title {
+        margin-top: 1rem;
+    }
+
+    .project-card img {
+        width: 19rem;
+    }
+}
