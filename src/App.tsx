@@ -1,4 +1,3 @@
-import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/layouts/Hero";
 import About from "./components/layouts/About";
@@ -10,12 +9,21 @@ function App() {
         <>
             <Navbar />
             <div className="mx-56 my-2">
-                <Routes>
-                    <Route path="/" element={<Hero />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
+                <section id="Home">
+                    <Hero />
+                </section>
+                <section
+                    id="About"
+                    className="px-45 flex justify-center items-center flex-col gap-4"
+                >
+                    <About />
+                </section>
+                <section id="Projects">
+                    <Projects />
+                </section>
+                <section id="Contact">
+                    <Contact />
+                </section>
             </div>
         </>
     );
