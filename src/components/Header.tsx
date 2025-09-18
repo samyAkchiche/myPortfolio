@@ -7,7 +7,7 @@ export default function Header() {
                 <img
                     src={logo}
                     alt="Samy Logo"
-                    className="w-20 h-auto cursor-pointer"
+                    className="w-35 h-auto cursor-pointer"
                 />
             </a>
         </>
