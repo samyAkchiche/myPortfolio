@@ -12,7 +12,13 @@ import BootstrapLogo from "../../assets/skillsLogos/BootStrapLogo.svg";
 import JestLogo from "../../assets/skillsLogos/JestLogo.svg";
 import Banner from "@/components/ui/Banner";
 
-const skillsLogoBannerOne = [
+interface SkillLogo {
+    img: string;
+    text: string;
+    style: string;
+}
+
+const skillsLogoBannerOne: SkillLogo[] = [
     {
         img: HtmlLogo,
         text: "HTML",
@@ -45,7 +51,7 @@ const skillsLogoBannerOne = [
     },
 ];
 
-const skillsLogoBannerTwo = [
+const skillsLogoBannerTwo: SkillLogo[] = [
     {
         img: SassLogo,
         text: "Sass",
@@ -53,7 +59,7 @@ const skillsLogoBannerTwo = [
     },
     {
         img: PythonLogo,
-        text: "Phyton",
+        text: "Python",
         style: "h-auto w-14",
     },
     {
@@ -81,7 +87,7 @@ const skillsLogoBannerTwo = [
 export default function About() {
     return (
         <>
-            <h1 className="text-4xl">About Me</h1>
+            <h1 className="text-4xl mb-7">About Me</h1>
             <p>
                 I'm a Front-End Developer based in
                 <span className="text-yellow-300"> Paris, France</span>, with
@@ -95,8 +101,10 @@ export default function About() {
                 about building intuitive interfaces and always eager to learn
                 new technologies.
             </p>
+
+            <h1 className="text-4xl mb-5">My Technologies</h1>
             <Banner style="bg-black/15 h-20 flex flex-row gap-4 w-full overflow-hidden relative">
-                {...skillsLogoBannerOne.map((skillLogo, index) => (
+                {skillsLogoBannerOne.map((skillLogo, index) => (
                     <div
                         key={index}
                         className="flex flex-row items-center gap-2 animate-scroll-left min-w-max"
@@ -109,7 +117,7 @@ export default function About() {
                         <p>{skillLogo.text}</p>
                     </div>
                 ))}
-                {...skillsLogoBannerOne.map((skillLogo, index) => (
+                {skillsLogoBannerOne.map((skillLogo, index) => (
                     <div
                         key={index}
                         className="flex flex-row items-center gap-2 animate-scroll-left min-w-max"
@@ -124,7 +132,7 @@ export default function About() {
                 ))}
             </Banner>
             <Banner style="bg-black/15 h-20 w-full flex flex-row gap-4 overflow-hidden relative">
-                {...skillsLogoBannerTwo.map((skillLogo, index) => (
+                {skillsLogoBannerTwo.map((skillLogo, index) => (
                     <div
                         key={index}
                         className="flex flex-row items-center gap-2 animate-scroll-right min-w-max"
@@ -137,7 +145,7 @@ export default function About() {
                         <p>{skillLogo.text}</p>
                     </div>
                 ))}
-                {...skillsLogoBannerTwo.map((skillLogo, index) => (
+                {skillsLogoBannerTwo.map((skillLogo, index) => (
                     <div
                         key={index}
                         className="flex flex-row items-center gap-2 animate-scroll-right min-w-max"
