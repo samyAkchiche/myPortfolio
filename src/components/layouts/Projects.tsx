@@ -56,7 +56,7 @@ const cards: CardInfo[] = [
         cardImageAlt: "Little Lemon Restaurant's website screenshot ",
         cardDescription:
             "This repository contains the source code for the Little Lemon restaurant website, a responsive web application built with React. The project provides a modern, user-friendly online presence for the restaurant, featuring key information, weekly specials, customer testimonials, and a fully functional table reservation system.",
-        //! No deployement for the moment //
+        cardLiveLink: "https://littlelemonrestaurantbysamy.netlify.app/",
         cardGithubLink: "https://github.com/samyAkchiche/little-lemon",
     },
 ];
