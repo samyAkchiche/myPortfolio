@@ -9,8 +9,10 @@ export default function Hero() {
                 className="w-40 h-40 rounded-full object-cover"
             />
             <h1 className="text-3xl font-jacques">
-                <span className="text-gray-400">Hey👋, I am </span> Samy
-                Akchiche. <br />
+                <span className="text-gray-400">
+                    Hey <span className="wave-emoji">👋</span>, I am{" "}
+                </span>{" "}
+                Samy Akchiche. <br />
                 <span className="text-gray-400"> I am a </span>Front-End
                 Developer.
             </h1>
