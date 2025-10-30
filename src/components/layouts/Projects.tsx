@@ -10,7 +10,7 @@ import quizImg from "../../assets/screenshots/onepieceQuiz-Screenshot.png";
 import foodAppImg from "../../assets/screenshots/foodapp-fullScreenShot.png";
 import littleLemonImg from "../../assets/screenshots/little-lemon-screenshot.png";
 import PharmaceuticaImg from "../../assets/screenshots/Pharmaceutica-ScreenShot.png";
-import squareIcon from "@/assets/icons/square-arrow-out-up-right.svg";
+import ExternalSquareIcon from "../ui/ExternalSquareIcon";
 import { useEffect, useRef } from "react";
 
 type CardInfo = {
@@ -135,28 +135,18 @@ export default function Projects() {
                                     href={card.cardGithubLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex gap-1"
+                                    className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                                 >
-                                    Github{" "}
-                                    <img
-                                        src={squareIcon}
-                                        alt="redirect"
-                                        className="h-auto w-4"
-                                    />
+                                    Github <ExternalSquareIcon />
                                 </a>
                                 {card.cardLiveLink ? (
                                     <a
                                         href={card.cardLiveLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex gap-1"
+                                        className="flex gap-1 hover:text-blue-400 "
                                     >
-                                        Live{" "}
-                                        <img
-                                            src={squareIcon}
-                                            alt="redirect"
-                                            className="h-auto w-4"
-                                        />
+                                        Live <ExternalSquareIcon />
                                     </a>
                                 ) : (
                                     <p>Coming soon!</p>
