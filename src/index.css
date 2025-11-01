@@ -80,6 +80,8 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    --lineBar-from: #432371;
+    --lineBar-to: #faae7b;
 }
 
 .dark {
@@ -181,5 +183,23 @@
     60%,
     100% {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes lineGrow {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
