@@ -3,6 +3,8 @@ import emailjs from "@emailjs/browser";
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { CircleAlert, CircleCheck } from "lucide-react";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -90,16 +92,35 @@ export default function Contact() {
                         required
                     />
                 </div>
-                <Button type="submit">Send</Button>
+                <Button type="submit" className="cursor-pointer">
+                    Send
+                </Button>
                 {status === "success" && (
-                    <p className="mt-4 text-green-500 text-center">
-                        Message sent successfully!
-                    </p>
+                    // <p className="mt-4 text-green-500 text-center">
+                    //     Message sent successfully!
+                    // </p>
+                    <Alert>
+                        <CircleCheck color="#00c951" />
+                        <AlertTitle>Message sent successfully!</AlertTitle>
+                        <AlertDescription>
+                            All done! We’ll get back to you before you know it.
+                        </AlertDescription>
+                    </Alert>
                 )}
                 {status === "error" && (
-                    <p className="mt-4 text-red-500 text-center">
-                        Something went wrong, try again
-                    </p>
+                    // <p className="mt-4 text-red-500 text-center">
+                    //     Something went wrong, try again
+                    // </p>
+                    <Alert variant="destructive">
+                        <CircleAlert color="#fb2c36" />
+                        <AlertTitle>
+                            Something went wrong, try again.
+                        </AlertTitle>
+                        <AlertDescription>
+                            We couldn’t send your message. Try again in a few
+                            moments.
+                        </AlertDescription>
+                    </Alert>
                 )}
             </form>
         </div>
