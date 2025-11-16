@@ -11,6 +11,8 @@ import foodAppImg from "../../assets/screenshots/foodapp-fullScreenShot.png";
 import littleLemonImg from "../../assets/screenshots/little-lemon-screenshot.png";
 import PharmaceuticaImg from "../../assets/screenshots/Pharmaceutica-ScreenShot.png";
 import ExternalSquareIcon from "../ui/ExternalSquareIcon";
+import onePieceQuizVid from "@/assets/Vids/onePieceQuizVid.mp4";
+import littleLemonVid from "@/assets/Vids/littleLemonVid.mp4";
 import foodAppVid from "@/assets/Vids/foodAppVid.mp4";
 import { useEffect, useRef } from "react";
 import {
@@ -40,6 +42,7 @@ const cards: CardInfo[] = [
             "Welcome to SamyQuiz-OnePiece — a fun and engaging trivia game built for fans of the One Piece anime and manga series! This app challenges players with a series of multiple-choice questions that test their knowledge of the One Piece world — from characters and story arcs to epic battles and hidden lore.",
         cardLiveLink: "https://onepiece-quiz-2022.web.app/",
         cardGithubLink: "https://github.com/samyAkchiche/SamyQuiz-OnePiece",
+        cardHoverVid: onePieceQuizVid,
     },
     {
         cardTitle: "FoodApp",
@@ -61,6 +64,7 @@ const cards: CardInfo[] = [
             "Pharmaceutica is an innovative platform designed to transform the pharmaceutical industry. Focused on reliability and efficiency, it provides advanced tools for managing transactions, products, and clients within a comprehensive warehouse tracking system.",
         //! No deployement for the moment //
         cardGithubLink: "https://github.com/yanissiammour/Pharmaceutica",
+        // ! No video yet
     },
     {
         cardTitle: "Little Lemon Restaurant",
@@ -78,6 +82,7 @@ const cards: CardInfo[] = [
             "This repository contains the source code for the Little Lemon restaurant website, a responsive web application built with React. The project provides a modern, user-friendly online presence for the restaurant, featuring key information, weekly specials, customer testimonials, and a fully functional table reservation system.",
         cardLiveLink: "https://littlelemonrestaurantbysamy.netlify.app/",
         cardGithubLink: "https://github.com/samyAkchiche/little-lemon",
+        cardHoverVid: littleLemonVid,
     },
 ];
 
@@ -129,12 +134,14 @@ export default function Projects() {
                                         side="top"
                                         className="flex justify-center items-center p-0 w-[40vw] max-w-[40vw] rounded-xl border-0 overflow-hidden"
                                     >
-                                        <video autoPlay muted loop>
-                                            <source
-                                                src={card.cardHoverVid}
-                                                type="video/mp4"
-                                            />
-                                        </video>
+                                        {card.cardHoverVid && (
+                                            <video autoPlay muted loop>
+                                                <source
+                                                    src={card.cardHoverVid}
+                                                    type="video/mp4"
+                                                />
+                                            </video>
+                                        )}
                                     </HoverCardContent>
                                 </HoverCard>
                             </CardHeader>
