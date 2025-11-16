@@ -62,14 +62,6 @@ export default function Contact() {
                         type="text"
                         required
                     />
-                    {/* <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    /> */}
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
@@ -96,9 +88,6 @@ export default function Contact() {
                     Send
                 </Button>
                 {status === "success" && (
-                    // <p className="mt-4 text-green-500 text-center">
-                    //     Message sent successfully!
-                    // </p>
                     <Alert>
                         <CircleCheck color="#00c951" />
                         <AlertTitle>Message sent successfully!</AlertTitle>
@@ -108,9 +97,6 @@ export default function Contact() {
                     </Alert>
                 )}
                 {status === "error" && (
-                    // <p className="mt-4 text-red-500 text-center">
-                    //     Something went wrong, try again
-                    // </p>
                     <Alert variant="destructive">
                         <CircleAlert color="#fb2c36" />
                         <AlertTitle>

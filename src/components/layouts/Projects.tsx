@@ -11,7 +11,13 @@ import foodAppImg from "../../assets/screenshots/foodapp-fullScreenShot.png";
 import littleLemonImg from "../../assets/screenshots/little-lemon-screenshot.png";
 import PharmaceuticaImg from "../../assets/screenshots/Pharmaceutica-ScreenShot.png";
 import ExternalSquareIcon from "../ui/ExternalSquareIcon";
+import foodAppVid from "@/assets/Vids/foodAppVid.mp4";
 import { useEffect, useRef } from "react";
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 type CardInfo = {
     cardTitle: string;
@@ -21,6 +27,7 @@ type CardInfo = {
     cardDescription: string;
     cardLiveLink?: string;
     cardGithubLink: string;
+    cardHoverVid?: string;
 };
 
 const cards: CardInfo[] = [
@@ -43,6 +50,7 @@ const cards: CardInfo[] = [
             "FoodApp is a user-friendly platform designed to help food enthusiasts discover delicious recipes and cooking inspiration. Whether you're looking for a quick meal or exploring new culinary ideas, this app provides an intuitive interface to browse, explore, and get detailed instructions for a wide variety of recipes.",
         cardLiveLink: "https://samy-foodapp.netlify.app/",
         cardGithubLink: "https://github.com/samyAkchiche/FoodApp",
+        cardHoverVid: foodAppVid,
     },
     {
         cardTitle: "Pharmaceutica",
@@ -109,11 +117,26 @@ export default function Projects() {
                                 <CardTitle className="text-lg font-semibold text-center mb-3">
                                     {card.cardTitle}
                                 </CardTitle>
-                                <img
-                                    src={card.cardImage}
-                                    alt={card.cardImageAlt}
-                                    className="h-45 object-cover rounded-lg shadow-sm"
-                                />
+                                <HoverCard>
+                                    <HoverCardTrigger>
+                                        <img
+                                            src={card.cardImage}
+                                            alt={card.cardImageAlt}
+                                            className="h-46 object-cover rounded-lg shadow-sm"
+                                        />
+                                    </HoverCardTrigger>
+                                    <HoverCardContent
+                                        side="top"
+                                        className="flex justify-center items-center p-0 w-[40vw] max-w-[40vw] rounded-xl border-0 overflow-hidden"
+                                    >
+                                        <video autoPlay muted loop>
+                                            <source
+                                                src={card.cardHoverVid}
+                                                type="video/mp4"
+                                            />
+                                        </video>
+                                    </HoverCardContent>
+                                </HoverCard>
                             </CardHeader>
                             <CardContent>
                                 <CardDescription className="line-clamp-3">
