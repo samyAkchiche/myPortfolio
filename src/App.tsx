@@ -20,20 +20,20 @@ function App() {
                         : "opacity-0 translate-y-10 pointer-events-none"
                 }`}
             >
-                <div className="mx-56 my-2">
-                    <section id="Home" className="">
+                <div className="mx-56 my-2 lg:mx-32">
+                    <section id="hero">
                         <Hero />
                     </section>
                     <section
-                        id="About"
-                        className="px-45 flex justify-center items-center flex-col gap-4"
+                        id="about"
+                        className="px-44 lg:px-24 flex justify-center items-center flex-col gap-4"
                     >
                         <About />
                     </section>
-                    <section id="Projects">
+                    <section id="projects">
                         <Projects />
                     </section>
-                    <section id="Contact">
+                    <section id="contact">
                         <Contact />
                     </section>
                 </div>
