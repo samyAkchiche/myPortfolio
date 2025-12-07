@@ -87,7 +87,7 @@ const skillsLogoBannerTwo: SkillLogo[] = [
 export default function About() {
     return (
         <>
-            <h1 className="text-4xl mb-7">About Me</h1>
+            <h1 className="text-4xl mb-7 max-md:text-3xl">About Me</h1>
             <p>
                 I'm a Front-End Developer based in
                 <span className="text-yellow-300"> Paris, France</span>, with
@@ -102,7 +102,7 @@ export default function About() {
                 new technologies.
             </p>
 
-            <h1 className="text-4xl mb-5">My Technologies</h1>
+            <h1 className="text-4xl mb-5 max-md:text-3xl">My Technologies</h1>
             <Banner style="bg-black/15 h-20 flex flex-row gap-4 w-full overflow-hidden relative">
                 {skillsLogoBannerOne.map((skillLogo, index) => (
                     <div

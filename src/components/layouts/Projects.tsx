@@ -93,6 +93,9 @@ export default function Projects() {
         const container = scrollRef.current;
         if (!container) return;
 
+        const isDesktop = window.innerWidth >= 768;
+        if (!isDesktop) return;
+
         const handleWheel = (e: WheelEvent) => {
             if (e.deltaY === 0) return;
             e.preventDefault();
@@ -107,16 +110,18 @@ export default function Projects() {
     }, []);
     return (
         <>
-            <h1 className="text-4xl my-6 text-center">My Projects</h1>
+            <h1 className="text-4xl my-6 text-center max-md:text-3xl">
+                My Projects
+            </h1>
             <div
                 ref={scrollRef}
-                className="flex gap-2 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar"
+                className="flex gap-2 max-md:gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar max-md:flex-col "
             >
                 {cards.map((card) => {
                     return (
                         <Card
                             key={card.cardTitle}
-                            className="flex flex-col justify-between flex-shrink-0 w-80 h-auto snap-center shadow-md rounded-2xl overflow-hidden "
+                            className="flex flex-col justify-between flex-shrink-0 w-full h-auto snap-center shadow-md rounded-2xl overflow-hidden "
                         >
                             <CardHeader className="p-3 flex flex-col items-center">
                                 <CardTitle className="text-lg font-semibold text-center mb-3">

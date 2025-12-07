@@ -2,13 +2,13 @@ import profile from "../../assets/Profile.jpg";
 
 export default function Hero() {
     return (
-        <div className="flex justify-center items-center gap-4 h-96">
+        <div className="flex justify-center max-md:flex-col items-center gap-4 h-96">
             <img
                 src={profile}
                 alt="profile picture"
                 className="w-40 h-40 rounded-full object-cover"
             />
-            <h1 className="text-3xl font-jacques max-lg:text-2xl">
+            <h1 className="text-3xl font-jacques max-lg:text-2xl max-md:text-[1.44rem]">
                 <span className="text-gray-400">
                     Hey <span className="wave-emoji">👋</span>, I am{" "}
                 </span>{" "}

@@ -50,7 +50,9 @@ export default function Contact() {
     };
     return (
         <div className="max-w-xl mx-auto my-12 px-4">
-            <h1 className="text-4xl my-6 text-center">Contact Me</h1>
+            <h1 className="text-4xl my-6 text-center max-md:text-3xl">
+                Contact Me
+            </h1>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>
                     <label htmlFor="name">Name</label>
