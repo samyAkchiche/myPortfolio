@@ -8,7 +8,7 @@ export default function Hero() {
                 alt="profile picture"
                 className="w-40 h-40 rounded-full object-cover"
             />
-            <h1 className="text-3xl font-jacques">
+            <h1 className="lg:text-3xl font-jacques md:text-2xl">
                 <span className="text-gray-400">
                     Hey <span className="wave-emoji">👋</span>, I am{" "}
                 </span>{" "}
