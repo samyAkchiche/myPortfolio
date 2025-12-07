@@ -20,13 +20,13 @@ function App() {
                         : "opacity-0 translate-y-10 pointer-events-none"
                 }`}
             >
-                <div className="mx-56 my-2 lg:mx-32 md:mx-20">
+                <div className="mx-64 max-xl:mx-46 max-lg:mx-32 my-2 max-md:mx-20">
                     <section id="hero">
                         <Hero />
                     </section>
                     <section
                         id="about"
-                        className="px-44 lg:px-24 md:px-18 flex justify-center items-center flex-col gap-4"
+                        className="px-44 max-lg:px-2 flex justify-center items-center flex-col gap-4"
                     >
                         <About />
                     </section>
