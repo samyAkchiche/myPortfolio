@@ -5,13 +5,33 @@ import Projects from "./components/layouts/Projects";
 import Contact from "./components/layouts/Contact";
 import { useState } from "react";
 import IntroAnimation from "./components/ui/IntroAnimation";
+import { Menu, X } from "lucide-react";
 
 function App() {
     const [showContent, setShowContent] = useState(false);
+    const [isOpened, setIsOpened] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsOpened(!isOpened);
+    };
 
     return (
         <div className="overflow-hidden">
-            <Navbar />
+            <Navbar isOpened={isOpened} />
+            {!isOpened ? (
+                <Menu
+                    className="top-0 right-0 absolute md:hidden cursor-pointer z-[60]"
+                    size={50}
+                    onClick={toggleSidebar}
+                />
+            ) : (
+                <X
+                    className="top-0 right-0 absolute md:hidden z-[60] cursor-pointer"
+                    size={50}
+                    onClick={toggleSidebar}
+                />
+            )}
+
             <IntroAnimation onAnimationEnd={() => setShowContent(true)} />
             <div
                 className={`transition-all duration-1000 ${
