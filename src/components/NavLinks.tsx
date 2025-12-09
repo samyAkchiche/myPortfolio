@@ -2,7 +2,7 @@ const navLinks: string[] = ["Home", "About", "Projects", "Contact"];
 
 export default function NavLinks() {
     return (
-        <ul className="flex flex-row gap-6 mr-12 max-sm:flex-col">
+        <ul className="flex flex-row gap-6 mr-12 max-sm:flex-col max-md:mr-0">
             {navLinks.map((link) => {
                 const id = link === "Home" ? "hero" : link.toLowerCase();
                 return (
