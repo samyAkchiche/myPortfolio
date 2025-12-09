@@ -121,7 +121,7 @@ export default function Projects() {
                     return (
                         <Card
                             key={card.cardTitle}
-                            className="flex flex-col justify-between flex-shrink-0 w-full h-auto snap-center shadow-md rounded-2xl overflow-hidden "
+                            className="flex flex-col justify-between flex-shrink-0 w-80 max-md:w-full h-auto snap-center shadow-md rounded-2xl overflow-hidden "
                         >
                             <CardHeader className="p-3 flex flex-col items-center">
                                 <CardTitle className="text-lg font-semibold text-center mb-3">
