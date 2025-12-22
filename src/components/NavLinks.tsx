@@ -1,6 +1,10 @@
 const navLinks: string[] = ["Home", "About", "Projects", "Contact"];
 
-export default function NavLinks() {
+interface NavbarProps {
+    toggleSidebar: () => void;
+}
+
+export default function NavLinks({toggleSidebar }: NavbarProps) {
     return (
         <ul className="flex flex-row gap-6 mr-12 max-sm:flex-col max-md:mr-0">
             {navLinks.map((link) => {
@@ -10,6 +14,7 @@ export default function NavLinks() {
                         <a
                             href={`#${id}`}
                             className="transition-colors duration-300 "
+                            onClick={toggleSidebar}
                         >
                             {link}
                             <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>

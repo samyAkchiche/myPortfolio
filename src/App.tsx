@@ -17,17 +17,17 @@ function App() {
 
     return (
         <div className="overflow-hidden">
-            <Navbar isOpened={isOpened} />
+            <Navbar isOpened={isOpened} toggleSidebar={toggleSidebar} />
             {!isOpened ? (
                 <Menu
-                    className="top-0 right-0 absolute md:hidden cursor-pointer z-[60]"
-                    size={50}
+                    className="top-0 right-0 absolute md:hidden cursor-pointer z-[60] bg-amber-300 rounded-full p-5"
+                    size={80}
                     onClick={toggleSidebar}
                 />
             ) : (
                 <X
-                    className="top-0 right-0 absolute md:hidden z-[60] cursor-pointer"
-                    size={50}
+                    className="top-0 right-0 absolute md:hidden z-[60] cursor-pointer bg-black rounded-full p-2"
+                    size={55}
                     onClick={toggleSidebar}
                 />
             )}
