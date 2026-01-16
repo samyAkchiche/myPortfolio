@@ -110,7 +110,9 @@ export default function Projects() {
 	}, []);
 	return (
 		<>
-			<h1 className="text-4xl my-6 text-center max-md:text-3xl">My Projects</h1>
+			<h1 className="text-4xl my-6 text-center max-md:text-3xl">
+				My Projects
+			</h1>
 			<div
 				ref={scrollRef}
 				className="flex gap-2 max-md:gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar max-md:flex-col "
@@ -139,7 +141,10 @@ export default function Projects() {
 									>
 										{card.cardHoverVid && (
 											<video autoPlay muted loop>
-												<source src={card.cardHoverVid} type="video/mp4" />
+												<source
+													src={card.cardHoverVid}
+													type="video/mp4"
+												/>
 											</video>
 										)}
 									</HoverCardContent>
@@ -153,7 +158,7 @@ export default function Projects() {
 									{card.cardTech.map((tech) => (
 										<span
 											key={tech}
-											className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors cursor-pointer"
+											className="px-3 py-1 text-xs font-medium bg-gray-100  text-gray-700 rounded-full border border-gray-200 hover:bg-custom-secondary-accent/60 transition-colors cursor-pointer"
 										>
 											{tech}
 										</span>
@@ -165,7 +170,7 @@ export default function Projects() {
 									href={card.cardGithubLink}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+									className="flex items-center gap-1 text-gray-700 hover:text-custom-secondary-accent transition-colors"
 								>
 									Github <ExternalSquareIcon />
 								</a>
@@ -174,7 +179,7 @@ export default function Projects() {
 										href={card.cardLiveLink}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="flex gap-1 hover:text-blue-400 "
+										className="flex gap-1 hover:text-custom-secondary-accent transition-colors"
 									>
 										Live <ExternalSquareIcon />
 									</a>

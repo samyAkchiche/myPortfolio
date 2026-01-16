@@ -93,7 +93,10 @@ export default function Contact() {
 						required
 					/>
 				</div>
-				<Button type="submit" className="cursor-pointer">
+				<Button
+					type="submit"
+					className="cursor-pointer hover:bg-custom-secondary-accent transition-colors duration-300"
+				>
 					Send
 				</Button>
 				{status === "success" && (
@@ -117,7 +120,7 @@ export default function Contact() {
 						</AlertDescription>
 					</Alert>
 				)}
-				<div className="flex gap-14 justify-center mt-4">
+				<div className="flex gap-14 justify-center mt-4 max-md:gap-6">
 					<a
 						href="https://www.linkedin.com/in/samy-akchiche-704125280/"
 						target="_blank"
@@ -148,7 +151,7 @@ export default function Contact() {
 						<FontAwesomeIcon
 							icon={faGithub}
 							size="2xl"
-							className="text-white"
+							className="text-white hover:text-gray-300"
 						/>
 					</a>
 					<a

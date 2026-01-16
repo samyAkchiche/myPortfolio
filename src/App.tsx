@@ -20,14 +20,14 @@ function App() {
 			<Navbar isOpened={isOpened} toggleSidebar={toggleSidebar} />
 			{!isOpened ? (
 				<Menu
-					className="top-0 right-0 absolute md:hidden cursor-pointer z-[60] bg-amber-300 rounded-full p-5"
-					size={80}
+					className="top-0 right-0 absolute md:hidden cursor-pointer z-[60] bg-custom-accent rounded-full p-4"
+					size={60}
 					onClick={toggleSidebar}
 				/>
 			) : (
 				<X
-					className="top-0 right-0 absolute md:hidden z-[60] cursor-pointer bg-black rounded-full p-2"
-					size={55}
+					className="top-0 right-0 absolute md:hidden z-[60] cursor-pointer bg-custom-accent rounded-full p-3"
+					size={60}
 					onClick={toggleSidebar}
 				/>
 			)}
