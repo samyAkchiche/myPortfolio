@@ -11,9 +11,9 @@ import foodAppImg from "../../assets/screenshots/foodapp-fullScreenShot.png";
 import littleLemonImg from "../../assets/screenshots/little-lemon-screenshot.png";
 import PharmaceuticaImg from "../../assets/screenshots/Pharmaceutica-ScreenShot.png";
 import ExternalSquareIcon from "../ui/ExternalSquareIcon";
-import onePieceQuizVid from "@/assets/Vids/onePieceQuizVid.mp4";
-import littleLemonVid from "@/assets/Vids/littleLemonVid.mp4";
-import foodAppVid from "@/assets/Vids/foodAppVid.mp4";
+import onePieceQuizVid from "@/assets/Vids/onePieceQuizVid.webm";
+import littleLemonVid from "@/assets/Vids/littleLemonVid.webm";
+import foodAppVid from "@/assets/Vids/foodAppVid.webm";
 import { useEffect, useRef } from "react";
 import {
 	HoverCard,
