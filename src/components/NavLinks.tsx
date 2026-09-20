@@ -1,4 +1,4 @@
-const navLinks: string[] = ["Home", "About", "Projects", "Contact"];
+const navLinks: string[] = ["Home", "About", "Experience", "Projects", "Contact"];
 
 interface NavbarProps {
 	toggleSidebar: () => void;

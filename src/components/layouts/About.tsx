@@ -10,84 +10,38 @@ import SassLogo from "../../assets/skillsLogos/SassLogo.svg";
 import PythonLogo from "../../assets/skillsLogos/PythonLogo.svg";
 import BootstrapLogo from "../../assets/skillsLogos/BootStrapLogo.svg";
 import JestLogo from "../../assets/skillsLogos/JestLogo.svg";
-import Banner from "@/components/ui/Banner";
+import Reveal from "@/components/ui/Reveal";
 
-interface SkillLogo {
-	img: string;
-	text: string;
-	style: string;
-}
-
-const skillsLogoBannerOne: SkillLogo[] = [
+const skillGroups = [
 	{
-		img: HtmlLogo,
-		text: "HTML",
-		style: "h-auto w-14",
+		title: "Front-end",
+		items: [
+			{ img: HtmlLogo, name: "HTML" },
+			{ img: JSLogo, name: "JavaScript" },
+			{ img: TSLogo, name: "TypeScript" },
+			{ img: ReactLogo, name: "React" },
+			{ img: TailwindLogo, name: "Tailwind" },
+			{ img: SassLogo, name: "Sass" },
+			{ img: BootstrapLogo, name: "Bootstrap" },
+		],
 	},
 	{
-		img: TSLogo,
-		text: "TypeScript",
-		style: "h-auto w-14",
-	},
-	{
-		img: JSLogo,
-		text: "JavaScript",
-		style: "h-auto w-14",
-	},
-	{
-		img: ReactLogo,
-		text: "React",
-		style: "h-auto w-14",
-	},
-	{
-		img: GitLogo,
-		text: "Git",
-		style: "h-auto w-14",
-	},
-	{
-		img: GithubLogo,
-		text: "Github",
-		style: "h-auto w-14",
-	},
-];
-
-const skillsLogoBannerTwo: SkillLogo[] = [
-	{
-		img: SassLogo,
-		text: "Sass",
-		style: "h-auto w-14",
-	},
-	{
-		img: PythonLogo,
-		text: "Python",
-		style: "h-auto w-14",
-	},
-	{
-		img: BootstrapLogo,
-		text: "Bootstrap",
-		style: "h-auto w-14",
-	},
-	{
-		img: FigmaLogo,
-		text: "Figma",
-		style: "h-auto w-8",
-	},
-	{
-		img: TailwindLogo,
-		text: "Tailwind",
-		style: "h-auto w-14",
-	},
-	{
-		img: JestLogo,
-		text: "Jest",
-		style: "h-auto w-14",
+		title: "Tools & workflow",
+		items: [
+			{ img: GitLogo, name: "Git" },
+			{ img: GithubLogo, name: "GitHub" },
+			{ img: FigmaLogo, name: "Figma" },
+			{ img: JestLogo, name: "Jest" },
+			{ img: PythonLogo, name: "Python" },
+		],
 	},
 ];
 
 export default function About() {
 	return (
 		<>
-			<h1 className="text-4xl mb-7 max-md:text-3xl">About Me</h1>
+			<Reveal>
+			<h1 className="section-title text-4xl mb-7 max-md:text-3xl">About Me</h1>
 			<p>
 				I'm a Front-End Developer based in
 				<span className="text-custom-secondary-text">
@@ -113,66 +67,44 @@ export default function About() {
 				and
 				<span className="text-custom-secondary-text"> UX</span>. I'm
 				passionate about building intuitive interfaces and always eager
-				to learn new technologies.
+				to learn new technologies. Alongside my front-end work, I'm
+				completing a degree in English (LLCER) at Université Paris
+				Nanterre and joining the Master in Digital Creation &amp;
+				Experience (CEN) at Université Paris 8 in September 2026. This
+				dual background lets me combine technical skills with
+				communication and intercultural experience.
 			</p>
+			</Reveal>
 
-			<h1 className="text-4xl mb-5 max-md:text-3xl">My Technologies</h1>
-			<Banner style="bg-black/15 h-20 flex flex-row gap-4 w-full overflow-hidden relative">
-				{skillsLogoBannerOne.map((skillLogo, index) => (
-					<div
-						key={index}
-						className="flex flex-row items-center gap-2 animate-scroll-left min-w-max"
-					>
-						<img
-							src={skillLogo.img}
-							alt="Tech Logo Image"
-							className={skillLogo.style}
-						/>
-						<p>{skillLogo.text}</p>
-					</div>
+			<h1 className="section-title mt-10 text-4xl mb-2 max-md:text-3xl">My Technologies</h1>
+			<p className="mb-6 text-custom-secondary-text">
+				The tools I reach for to design, build and ship interfaces.
+			</p>
+			<div className="flex w-full flex-col gap-8">
+				{skillGroups.map((group, gi) => (
+					<Reveal key={group.title} delay={gi * 100}>
+						<div className="mb-3 flex items-center gap-3">
+							<h2 className="text-sm uppercase tracking-[0.2em] text-custom-secondary-text">
+								{group.title}
+							</h2>
+							<span className="h-px flex-1 bg-gradient-to-r from-white/25 to-transparent" />
+						</div>
+						<ul className="flex flex-wrap justify-center gap-3">
+							{group.items.map((item) => (
+								<li
+									key={item.name}
+									className="glass group flex w-[calc(33.333%-0.5rem)] flex-col items-center gap-3 rounded-2xl px-2 py-5 sm:w-[calc(25%-0.6rem)]"
+								>
+									<span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/90 p-2.5 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
+										<img src={item.img} alt="" className="h-full w-full object-contain" />
+									</span>
+									<span className="text-sm">{item.name}</span>
+								</li>
+							))}
+						</ul>
+					</Reveal>
 				))}
-				{skillsLogoBannerOne.map((skillLogo, index) => (
-					<div
-						key={index}
-						className="flex flex-row items-center gap-2 animate-scroll-left min-w-max"
-					>
-						<img
-							src={skillLogo.img}
-							alt="Tech Logo Image"
-							className={skillLogo.style}
-						/>
-						<p>{skillLogo.text}</p>
-					</div>
-				))}
-			</Banner>
-			<Banner style="bg-black/15 h-20 w-full flex flex-row gap-4 overflow-hidden relative">
-				{skillsLogoBannerTwo.map((skillLogo, index) => (
-					<div
-						key={index}
-						className="flex flex-row items-center gap-2 animate-scroll-right min-w-max"
-					>
-						<img
-							src={skillLogo.img}
-							alt="Tech Logo Image"
-							className={skillLogo.style}
-						/>
-						<p>{skillLogo.text}</p>
-					</div>
-				))}
-				{skillsLogoBannerTwo.map((skillLogo, index) => (
-					<div
-						key={index}
-						className="flex flex-row items-center gap-2 animate-scroll-right min-w-max"
-					>
-						<img
-							src={skillLogo.img}
-							alt="Tech Logo Image"
-							className={skillLogo.style}
-						/>
-						<p>{skillLogo.text}</p>
-					</div>
-				))}
-			</Banner>
+			</div>
 		</>
 	);
 }
