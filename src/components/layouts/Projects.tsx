@@ -1,25 +1,13 @@
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from "../ui/card";
 import quizImg from "../../assets/screenshots/onepieceQuiz-Screenshot.png";
 import foodAppImg from "../../assets/screenshots/foodapp-fullScreenShot.png";
 import littleLemonImg from "../../assets/screenshots/little-lemon-screenshot.png";
 import PharmaceuticaImg from "../../assets/screenshots/Pharmaceutica-ScreenShot.png";
-import ExternalSquareIcon from "../ui/ExternalSquareIcon";
 import onePieceQuizVid from "@/assets/Vids/onePieceQuizVid.webm";
 import littleLemonVid from "@/assets/Vids/littleLemonVid.webm";
 import foodAppVid from "@/assets/Vids/foodAppVid.webm";
-import { useEffect, useRef } from "react";
-import {
-	HoverCard,
-	HoverCardContent,
-	HoverCardTrigger,
-} from "@/components/ui/hover-card";
+import { useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 type CardInfo = {
 	cardTitle: string;
@@ -86,110 +74,109 @@ const cards: CardInfo[] = [
 	},
 ];
 
-export default function Projects() {
-	const scrollRef = useRef<HTMLDivElement | null>(null);
 
-	useEffect(() => {
-		const container = scrollRef.current;
-		if (!container) return;
+function ProjectCard({ card, index }: { card: CardInfo; index: number }) {
+	const video = useRef<HTMLVideoElement | null>(null);
+	const play = () => video.current?.play().catch(() => {});
+	const stop = () => {
+		if (video.current) {
+			video.current.pause();
+			video.current.currentTime = 0;
+		}
+	};
 
-		const isDesktop = window.innerWidth >= 768;
-		if (!isDesktop) return;
-
-		const handleWheel = (e: WheelEvent) => {
-			if (e.deltaY === 0) return;
-			e.preventDefault();
-			container.scrollBy({
-				left: e.deltaY < 0 ? -100 : 100,
-				behavior: "smooth",
-			});
-		};
-
-		container.addEventListener("wheel", handleWheel, { passive: false });
-		return () => container.removeEventListener("wheel", handleWheel);
-	}, []);
 	return (
-		<>
-			<h1 className="text-4xl my-6 text-center max-md:text-3xl">
-				My Projects
-			</h1>
-			<div
-				ref={scrollRef}
-				className="flex gap-2 max-md:gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar max-md:flex-col "
-			>
-				{cards.map((card) => {
-					return (
-						<Card
-							key={card.cardTitle}
-							className="flex flex-col justify-between flex-shrink-0 w-80 max-md:w-full h-auto snap-center shadow-md rounded-2xl overflow-hidden "
-						>
-							<CardHeader className="p-3 flex flex-col items-center">
-								<CardTitle className="text-lg font-semibold text-center mb-3">
-									{card.cardTitle}
-								</CardTitle>
-								<HoverCard>
-									<HoverCardTrigger>
-										<img
-											src={card.cardImage}
-											alt={card.cardImageAlt}
-											className="h-46 object-cover rounded-lg shadow-sm"
-										/>
-									</HoverCardTrigger>
-									<HoverCardContent
-										side="top"
-										className="flex justify-center items-center p-0 w-[40vw] max-w-[40vw] rounded-xl border-0 overflow-hidden"
+		<div
+			className="mb-10 md:sticky md:mb-40 last:mb-0"
+			style={{ top: `${6 + index * 1.5}rem` }}
+		>
+			<Reveal>
+				<article
+					onMouseEnter={play}
+					onMouseLeave={stop}
+					className="grid gap-8 rounded-3xl border border-white/15 bg-[#150f27] p-6 shadow-[0_-12px_40px_rgba(0,0,0,0.6)] md:grid-cols-[1fr_1.15fr] md:p-8"
+				>
+					<div className="flex flex-col justify-between gap-6 text-left">
+						<div>
+							<span className="text-gradient font-jacques text-6xl leading-none">
+								0{index + 1}
+							</span>
+							<h3 className="mt-4 text-3xl font-jacques">{card.cardTitle}</h3>
+							<p className="mt-4 text-white/75 leading-relaxed line-clamp-5">
+								{card.cardDescription}
+							</p>
+							<ul className="mt-5 flex flex-wrap gap-2">
+								{card.cardTech.map((tech) => (
+									<li
+										key={tech}
+										className="rounded-full bg-white/10 px-3 py-1 text-xs text-custom-secondary-text"
 									>
-										{card.cardHoverVid && (
-											<video autoPlay muted loop>
-												<source
-													src={card.cardHoverVid}
-													type="video/mp4"
-												/>
-											</video>
-										)}
-									</HoverCardContent>
-								</HoverCard>
-							</CardHeader>
-							<CardContent>
-								<CardDescription className="line-clamp-3">
-									{card.cardDescription}
-								</CardDescription>
-								<div className="mt-4 flex flex-wrap gap-2">
-									{card.cardTech.map((tech) => (
-										<span
-											key={tech}
-											className="px-3 py-1 text-xs font-medium bg-gray-100  text-gray-700 rounded-full border border-gray-200 hover:bg-custom-secondary-accent/60 transition-colors cursor-pointer"
-										>
-											{tech}
-										</span>
-									))}
-								</div>
-							</CardContent>
-							<CardFooter className="flex justify-between p-3 border-t text-sm mx-4">
+										{tech}
+									</li>
+								))}
+							</ul>
+						</div>
+						<div className="flex flex-wrap gap-3 text-sm">
+							{card.cardLiveLink ? (
 								<a
-									href={card.cardGithubLink}
+									href={card.cardLiveLink}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center gap-1 text-gray-700 hover:text-custom-secondary-accent transition-colors"
+									className="btn-primary inline-flex items-center gap-1"
 								>
-									Github <ExternalSquareIcon />
+									Live site <ArrowUpRight size={16} />
 								</a>
-								{card.cardLiveLink ? (
-									<a
-										href={card.cardLiveLink}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="flex gap-1 hover:text-custom-secondary-accent transition-colors"
-									>
-										Live <ExternalSquareIcon />
-									</a>
-								) : (
-									<p>Coming soon!</p>
-								)}
-							</CardFooter>
-						</Card>
-					);
-				})}
+							) : (
+								<span className="btn-ghost opacity-70">Coming soon</span>
+							)}
+							<a
+								href={card.cardGithubLink}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="btn-ghost inline-flex items-center gap-1"
+							>
+								Source <ArrowUpRight size={16} />
+							</a>
+						</div>
+					</div>
+
+					<div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-white/15 bg-black/30">
+						<img
+							src={card.cardImage}
+							alt={card.cardImageAlt}
+							className="h-full w-full object-cover object-top"
+						/>
+						{card.cardHoverVid && (
+							<video
+								ref={video}
+								src={card.cardHoverVid}
+								muted
+								loop
+								playsInline
+								preload="none"
+								className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 [article:hover_&]:opacity-100"
+							/>
+						)}
+					</div>
+				</article>
+			</Reveal>
+		</div>
+	);
+}
+
+export default function Projects() {
+	return (
+		<>
+			<h1 className="section-title centered block w-fit mx-auto text-4xl my-6 text-center max-md:text-3xl">
+				My Projects
+			</h1>
+			<p className="mb-10 text-center text-custom-secondary-text">
+				A few things I've built — hover a card to see it in action.
+			</p>
+			<div>
+				{cards.map((card, i) => (
+					<ProjectCard key={card.cardTitle} card={card} index={i} />
+				))}
 			</div>
 		</>
 	);
