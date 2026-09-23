@@ -41,42 +41,51 @@ export default function About() {
 	return (
 		<>
 			<Reveal>
-			<h1 className="section-title text-4xl mb-7 max-md:text-3xl">About Me</h1>
-			<p>
-				I'm a Front-End Developer based in
-				<span className="text-custom-secondary-text">
-					{" "}
-					Paris, France
-				</span>
-				, with
-				<span className="text-custom-secondary-text">
-					{" "}
-					3 years of experience{" "}
-				</span>
-				creating responsive and user-friendly web applications. I
-				specialize in
-				<span className="text-custom-secondary-text">
-					{" "}
-					JavaScript, React
-				</span>
-				, and modern UI frameworks, with a strong focus on
-				<span className="text-custom-secondary-text">
-					{" "}
-					API integration
-				</span>{" "}
-				and
-				<span className="text-custom-secondary-text"> UX</span>. I'm
-				passionate about building intuitive interfaces and always eager
-				to learn new technologies. Alongside my front-end work, I'm
-				completing a degree in English (LLCER) at Université Paris
-				Nanterre and joining the Master in Digital Creation &amp;
-				Experience (CEN) at Université Paris 8 in September 2026. This
-				dual background lets me combine technical skills with
-				communication and intercultural experience.
-			</p>
+				<h1 className="section-title text-4xl mb-7 max-md:text-3xl">
+					About Me
+				</h1>
+				<p>
+					I'm a Front-End Developer based in
+					<span className="text-custom-secondary-text">
+						{" "}
+						Paris, France
+					</span>
+					, with
+					<span className="text-custom-secondary-text">
+						{" "}
+						4 years of experience{" "}
+					</span>
+					creating responsive and user-friendly web applications. I
+					specialize in
+					<span className="text-custom-secondary-text">
+						{" "}
+						JavaScript, TypeScript, React
+					</span>
+					, and modern UI frameworks, with a strong focus on
+					<span className="text-custom-secondary-text">
+						{" "}
+						API integration
+					</span>{" "}
+					and
+					<span className="text-custom-secondary-text"> UX</span>. I'm
+					passionate about building intuitive interfaces and always
+					eager to learn new technologies. I'm currently pursuing a
+					Master's degree in Digital Creation & Experience (CEN) at
+					Université Paris 8. I speak{" "}
+					<span className="text-custom-secondary-text">
+						English, French, Arabic, Kabyle,
+					</span>{" "}
+					and
+					<span className="text-custom-secondary-text">
+						{" "}
+						German.
+					</span>{" "}
+				</p>
 			</Reveal>
 
-			<h1 className="section-title mt-10 text-4xl mb-2 max-md:text-3xl">My Technologies</h1>
+			<h1 className="section-title mt-10 text-4xl mb-2 max-md:text-3xl">
+				My Technologies
+			</h1>
 			<p className="mb-6 text-custom-secondary-text">
 				The tools I reach for to design, build and ship interfaces.
 			</p>
@@ -96,7 +105,11 @@ export default function About() {
 									className="glass group flex w-[calc(33.333%-0.5rem)] flex-col items-center gap-3 rounded-2xl px-2 py-5 sm:w-[calc(25%-0.6rem)]"
 								>
 									<span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/90 p-2.5 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
-										<img src={item.img} alt="" className="h-full w-full object-contain" />
+										<img
+											src={item.img}
+											alt=""
+											className="h-full w-full object-contain"
+										/>
 									</span>
 									<span className="text-sm">{item.name}</span>
 								</li>

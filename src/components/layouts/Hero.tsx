@@ -1,7 +1,7 @@
 import profile from "../../assets/Profile.jpg";
 
 const stats = [
-	{ value: "3+", label: "years in front-end" },
+	{ value: "4+", label: "years in front-end" },
 	{ value: "4", label: "projects shipped" },
 	{ value: "3", label: "Meta certificates" },
 ];
@@ -20,7 +20,7 @@ export default function Hero() {
 				<div className="flex flex-col gap-4 items-start max-md:items-center text-left max-md:text-center">
 					<span className="status-pill">
 						<span className="status-dot" />
-						Open to work-study · Sept 2026
+						Open to work-study
 					</span>
 					<h1 className="text-5xl font-jacques leading-tight max-lg:text-4xl max-md:text-3xl">
 						<span className="text-white/70 text-3xl max-md:text-xl">
@@ -54,7 +54,9 @@ export default function Hero() {
 			<div className="grid grid-cols-3 gap-4 w-full max-w-2xl">
 				{stats.map((s) => (
 					<div key={s.label} className="glass rounded-2xl px-3 py-4">
-						<p className="text-3xl font-jacques text-gradient">{s.value}</p>
+						<p className="text-3xl font-jacques text-gradient">
+							{s.value}
+						</p>
 						<p className="text-xs text-white/70 mt-1">{s.label}</p>
 					</div>
 				))}
