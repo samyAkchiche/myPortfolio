@@ -1,4 +1,10 @@
-import { Briefcase, GraduationCap, Award, Languages, MapPin } from "lucide-react";
+import {
+	Briefcase,
+	GraduationCap,
+	Award,
+	Languages,
+	MapPin,
+} from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 type Experience = {
@@ -26,18 +32,16 @@ const experiences: Experience[] = [
 		type: "Internship",
 		period: "May 2026 – Jul 2026",
 		location: "Paris, France · On-site",
-		tags: ["Merchandising", "Sales Operations"],
-	},
-	{
-		role: "Sales Assistant",
-		company: "Fnac – Forum des Halles",
-		type: "Internship",
-		period: "May 2026 – Jun 2026",
-		location: "Paris, France · On-site",
+		tags: [
+			"Merchandising",
+			"Sales Operations",
+			"Management",
+			"Customer Service",
+		],
 		points: [
-			"Helped customers understand the technical features of audio and multimedia products.",
-			"Used internal tools for stock management, orders and checkout operations.",
-			"Strengthened communication, teamwork and prioritisation in a fast-paced environment.",
+			"Assisted customers in understanding the technical features of audio and multimedia products.",
+			"Utilized internal tools for stock management, order processing, and checkout operations.",
+			"Enhanced communication, teamwork, and prioritization skills in a fast-paced retail environment.",
 		],
 	},
 	{
@@ -46,6 +50,14 @@ const experiences: Experience[] = [
 		type: "Volunteering",
 		period: "Oct 2025 – Dec 2025",
 		location: "Nanterre, France · On-site",
+		tags: ["Event Management", "Team Collaboration", "Customer Service"],
+		points: [
+			"Welcoming and assisting student beneficiaries",
+			"Organizing logistics and setting up food supplies",
+			"Restocking and efficiently distributing products",
+			"Supporting more than 100 students facing financial hardship",
+			"Contributing to a welcoming, respectful, and accessible environment",
+		],
 	},
 	{
 		role: "Gym Trainer",
@@ -53,6 +65,12 @@ const experiences: Experience[] = [
 		type: "Part-time",
 		period: "Oct 2023 – Jun 2024",
 		location: "Tizi Ouzou, Algeria · On-site",
+		tags: ["Fitness Training", "Client Support", "Program Development"],
+		points: [
+			"Provided personalized fitness training and guidance to clients, helping them achieve their health and wellness goals.",
+			"Developed and implemented customized workout plans based on individual client needs, fitness levels, and goals.",
+			"Monitored client progress and adjusted training programs as necessary to ensure continued improvement and motivation.",
+		],
 	},
 	{
 		role: "Cashier",
@@ -60,6 +78,7 @@ const experiences: Experience[] = [
 		type: "Part-time",
 		period: "Mar 2023 – Sep 2023",
 		location: "Tizi Ouzou, Algeria · On-site",
+		tags: ["Customer Service", "Cash Handling", "Team Coordination"],
 		points: [
 			"Handled priorities and solved problems in a busy, high-traffic store.",
 			"Organised and restocked shelves to keep products available and visible.",
@@ -91,7 +110,10 @@ const education: Education[] = [
 ];
 
 const certifications = [
-	{ name: "Meta Front-End Developer Professional Certificate", date: "Oct 2025" },
+	{
+		name: "Meta Front-End Developer Professional Certificate",
+		date: "Oct 2025",
+	},
 	{ name: "Front-End Developer Capstone (Meta)", date: "Aug 2025" },
 	{ name: "Principles of UX/UI Design (Meta)", date: "2025" },
 ];
@@ -142,12 +164,17 @@ export default function Resume() {
 				</Reveal>
 				<ol className="relative border-l-2 border-transparent [border-image:linear-gradient(to_bottom,#9b82f3,#8fb4ff,transparent)_1] ml-3 flex flex-col gap-8">
 					{experiences.map((exp, i) => (
-						<li key={`${exp.company}-${exp.period}`} className="ml-8">
+						<li
+							key={`${exp.company}-${exp.period}`}
+							className="ml-8"
+						>
 							<Reveal delay={i * 80}>
 								<span className="absolute -left-[7px] mt-2 h-3.5 w-3.5 rounded-full bg-gradient-to-br from-[#8fb4ff] to-[#9b82f3] ring-4 ring-custom-bg shadow-[0_0_14px_#9b82f3]" />
 								<div className="glass rounded-2xl p-5">
 									<div className="flex flex-wrap items-baseline justify-between gap-x-4">
-										<h3 className="text-xl font-semibold">{exp.role}</h3>
+										<h3 className="text-xl font-semibold">
+											{exp.role}
+										</h3>
 										<span className="text-sm text-custom-secondary-text">
 											{exp.period}
 										</span>
@@ -181,11 +208,17 @@ export default function Resume() {
 					{education.map((ed, i) => (
 						<Reveal key={ed.school} delay={i * 80}>
 							<div className="glass h-full rounded-2xl p-5">
-								<p className="text-sm text-custom-secondary-text">{ed.period}</p>
-								<h3 className="text-lg font-semibold mt-1">{ed.school}</h3>
+								<p className="text-sm text-custom-secondary-text">
+									{ed.period}
+								</p>
+								<h3 className="text-lg font-semibold mt-1">
+									{ed.school}
+								</h3>
 								<p className="text-white/80">{ed.degree}</p>
 								{ed.note && (
-									<p className="mt-2 text-sm text-white/60">{ed.note}</p>
+									<p className="mt-2 text-sm text-white/60">
+										{ed.note}
+									</p>
 								)}
 								<Tags items={ed.tags} />
 							</div>
@@ -221,7 +254,9 @@ export default function Resume() {
 							<Reveal key={l.name} delay={i * 80}>
 								<li className="glass rounded-xl px-4 py-3 flex justify-between gap-4">
 									<span>{l.name}</span>
-									<span className="text-sm text-custom-secondary-text">{l.level}</span>
+									<span className="text-sm text-custom-secondary-text">
+										{l.level}
+									</span>
 								</li>
 							</Reveal>
 						))}
