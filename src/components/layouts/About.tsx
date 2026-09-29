@@ -13,6 +13,7 @@ import JestLogo from "../../assets/skillsLogos/JestLogo.svg";
 import IllustratorLogo from "../../assets/skillsLogos/IllustratorLogo.svg";
 import PhotoshopLogo from "../../assets/skillsLogos/PhotoshopLogo.svg";
 import PostmanLogo from "../../assets/skillsLogos/PostmanLogo.svg";
+import CssLogo from "../../assets/skillsLogos/CssLogo.svg";
 import Reveal from "@/components/ui/Reveal";
 
 const skillGroups = [
@@ -20,6 +21,7 @@ const skillGroups = [
 		title: "Front-end",
 		items: [
 			{ img: HtmlLogo, name: "HTML" },
+			{ img: CssLogo, name: "CSS" },
 			{ img: JSLogo, name: "JavaScript" },
 			{ img: TSLogo, name: "TypeScript" },
 			{ img: ReactLogo, name: "React" },
