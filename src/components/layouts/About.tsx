@@ -10,6 +10,9 @@ import SassLogo from "../../assets/skillsLogos/SassLogo.svg";
 import PythonLogo from "../../assets/skillsLogos/PythonLogo.svg";
 import BootstrapLogo from "../../assets/skillsLogos/BootStrapLogo.svg";
 import JestLogo from "../../assets/skillsLogos/JestLogo.svg";
+import IllustratorLogo from "../../assets/skillsLogos/IllustratorLogo.svg";
+import PhotoshopLogo from "../../assets/skillsLogos/PhotoshopLogo.svg";
+import PostmanLogo from "../../assets/skillsLogos/PostmanLogo.svg";
 import Reveal from "@/components/ui/Reveal";
 
 const skillGroups = [
@@ -32,7 +35,10 @@ const skillGroups = [
 			{ img: GithubLogo, name: "GitHub" },
 			{ img: FigmaLogo, name: "Figma" },
 			{ img: JestLogo, name: "Jest" },
+			{ img: PostmanLogo, name: "Postman" },
 			{ img: PythonLogo, name: "Python" },
+			{ img: IllustratorLogo, name: "Illustrator" },
+			{ img: PhotoshopLogo, name: "Photoshop" },
 		],
 	},
 ];

@@ -22,17 +22,6 @@ type CardInfo = {
 
 const cards: CardInfo[] = [
 	{
-		cardTitle: "One Piece Quiz",
-		cardImage: quizImg,
-		cardImageAlt: "One Piece Quiz's website screenshot ",
-		cardTech: ["HTML", "CSS", "Javascript", "Firebase", "JSON"],
-		cardDescription:
-			"Welcome to SamyQuiz-OnePiece — a fun and engaging trivia game built for fans of the One Piece anime and manga series! This app challenges players with a series of multiple-choice questions that test their knowledge of the One Piece world — from characters and story arcs to epic battles and hidden lore.",
-		cardLiveLink: "https://onepiece-quiz-2022.web.app/",
-		cardGithubLink: "https://github.com/samyAkchiche/SamyQuiz-OnePiece",
-		cardHoverVid: onePieceQuizVid,
-	},
-	{
 		cardTitle: "FoodApp",
 		cardImage: foodAppImg,
 		cardImageAlt: "FoodApp's website screenshot ",
@@ -43,17 +32,7 @@ const cards: CardInfo[] = [
 		cardGithubLink: "https://github.com/samyAkchiche/FoodApp",
 		cardHoverVid: foodAppVid,
 	},
-	{
-		cardTitle: "Pharmaceutica",
-		cardImage: PharmaceuticaImg,
-		cardImageAlt: "Pharmaceutica's website screenshot ",
-		cardTech: ["React", "TailwindCss", "Javascript", "Shadcn"],
-		cardDescription:
-			"Pharmaceutica is an innovative platform designed to transform the pharmaceutical industry. Focused on reliability and efficiency, it provides advanced tools for managing transactions, products, and clients within a comprehensive warehouse tracking system.",
-		//! No deployement for the moment //
-		cardGithubLink: "https://github.com/yanissiammour/Pharmaceutica",
-		// ! No video yet
-	},
+
 	{
 		cardTitle: "Little Lemon Restaurant",
 		cardImage: littleLemonImg,
@@ -72,8 +51,29 @@ const cards: CardInfo[] = [
 		cardGithubLink: "https://github.com/samyAkchiche/little-lemon",
 		cardHoverVid: littleLemonVid,
 	},
+	{
+		cardTitle: "Pharmaceutica",
+		cardImage: PharmaceuticaImg,
+		cardImageAlt: "Pharmaceutica's website screenshot ",
+		cardTech: ["React", "TailwindCss", "Javascript", "Shadcn"],
+		cardDescription:
+			"Pharmaceutica is an innovative platform designed to transform the pharmaceutical industry. Focused on reliability and efficiency, it provides advanced tools for managing transactions, products, and clients within a comprehensive warehouse tracking system.",
+		//! No deployement for the moment //
+		cardGithubLink: "https://github.com/yanissiammour/Pharmaceutica",
+		// ! No video yet
+	},
+	{
+		cardTitle: "One Piece Quiz",
+		cardImage: quizImg,
+		cardImageAlt: "One Piece Quiz's website screenshot ",
+		cardTech: ["HTML", "CSS", "Javascript", "Firebase", "JSON"],
+		cardDescription:
+			"Welcome to SamyQuiz-OnePiece — a fun and engaging trivia game built for fans of the One Piece anime and manga series! This app challenges players with a series of multiple-choice questions that test their knowledge of the One Piece world — from characters and story arcs to epic battles and hidden lore.",
+		cardLiveLink: "https://onepiece-quiz-2022.web.app/",
+		cardGithubLink: "https://github.com/samyAkchiche/SamyQuiz-OnePiece",
+		cardHoverVid: onePieceQuizVid,
+	},
 ];
-
 
 function ProjectCard({ card, index }: { card: CardInfo; index: number }) {
 	const video = useRef<HTMLVideoElement | null>(null);
@@ -101,7 +101,9 @@ function ProjectCard({ card, index }: { card: CardInfo; index: number }) {
 							<span className="text-gradient font-jacques text-6xl leading-none">
 								0{index + 1}
 							</span>
-							<h3 className="mt-4 text-3xl font-jacques">{card.cardTitle}</h3>
+							<h3 className="mt-4 text-3xl font-jacques">
+								{card.cardTitle}
+							</h3>
 							<p className="mt-4 text-white/75 leading-relaxed line-clamp-5">
 								{card.cardDescription}
 							</p>
@@ -127,7 +129,9 @@ function ProjectCard({ card, index }: { card: CardInfo; index: number }) {
 									Live site <ArrowUpRight size={16} />
 								</a>
 							) : (
-								<span className="btn-ghost opacity-70">Coming soon</span>
+								<span className="btn-ghost opacity-70">
+									Coming soon
+								</span>
 							)}
 							<a
 								href={card.cardGithubLink}
