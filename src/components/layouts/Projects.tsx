@@ -175,7 +175,7 @@ export default function Projects() {
 				My Projects
 			</h1>
 			<p className="mb-10 text-center text-custom-secondary-text">
-				A few things I've built — hover a card to see it in action.
+				A few things I've built
 			</p>
 			<div>
 				{cards.map((card, i) => (

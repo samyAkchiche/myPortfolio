@@ -13,8 +13,8 @@ type Experience = {
 	type: string;
 	period: string;
 	location: string;
-	points?: string[];
-	tags?: string[];
+	points: string[];
+	tags: string[];
 };
 
 type Education = {
@@ -90,21 +90,26 @@ const experiences: Experience[] = [
 const education: Education[] = [
 	{
 		school: "Université Paris 8",
-		degree: "Master's – Création et Expérience Numérique (CEN)",
+		degree: "Master's - Création et Expérience Numérique (CEN)",
 		period: "From Sep 2026",
+		tags: [
+			"Digital Creation",
+			"User Experience",
+			"Front-End Development",
+			"Web Design",
+		],
 		note: "Work-study programme (around 3 weeks at the company / 1 week at school).",
 	},
 	{
 		school: "Université Paris Nanterre",
-		degree: "Bachelor's – English Language, Literature & Civilization (LLCER)",
-		period: "Sep 2025 – Present",
-		note: "Third-year Licence.",
+		degree: "Bachelor's - English Language, Literature & Civilization (LLCER)",
+		period: "Sep 2025 - Present",
 		tags: ["Teaching English as a Foreign Language", "Academic Writing"],
 	},
 	{
 		school: "Université Mouloud Mammeri, Tizi-Ouzou",
-		degree: "Bachelor of Education – English Language and Literature",
-		period: "Sep 2022 – Jun 2025",
+		degree: "Bachelor of Education - English Language and Literature",
+		period: "Sep 2022 - Jun 2025",
 		tags: ["Teaching English as a Foreign Language", "Academic Writing"],
 	},
 ];
@@ -115,13 +120,19 @@ const certifications = [
 		date: "Oct 2025",
 	},
 	{ name: "Front-End Developer Capstone (Meta)", date: "Aug 2025" },
-	{ name: "Principles of UX/UI Design (Meta)", date: "2025" },
+	{ name: "Principles of UX/UI Design (Meta)", date: "May 2025" },
+	{ name: "Advanced React (Meta)", date: "March 2025" },
+	{ name: "HTML and CSS in depth (Meta)", date: "Feb 2025" },
+	{ name: "Version Control (Meta)", date: "Feb 2025" },
 ];
 
 const languages = [
-	{ name: "French", level: "Fluent" },
+	{ name: "French", level: "Native / bilingual" },
 	{ name: "English", level: "Native / bilingual" },
-	{ name: "Arabic", level: "Native" },
+	{ name: "Kabyle", level: "Native" },
+	{ name: "Arabic", level: "Fluent" },
+	{ name: "German", level: "Proficient" },
+	{ name: "Spanish", level: "Beginner" },
 ];
 
 function SectionTitle({
